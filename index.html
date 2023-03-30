@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function redirectToStore(event) {
+            event.preventDefault(); // Prevent the default action of the link
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=de.elevenkicker.app";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/us/app/elevenkicker/id6443654521";
+            } else {
+                alert('Your device is not supported or you are using a desktop browser. Please visit the app store manually.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <a href="#" onclick="redirectToStore(event)">Download App</a>
+
+</body>
+
+</html>
