@@ -3,8 +3,7 @@
 
 <head>
     <script>
-        function redirectToStore(event) {
-            event.preventDefault(); // Prevent the default action of the link
+        function redirectToStore() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             if (/android/i.test(userAgent)) {
@@ -15,14 +14,13 @@
                 alert('Your device is not supported or you are using a desktop browser. Please visit the app store manually.');
             }
         }
+
+        // Call the redirectToStore function immediately after defining it
+        redirectToStore();
     </script>
 </head>
 
-
 <body>
-
-    <a href="#" onclick="redirectToStore(event)">Download App</a>
-
 </body>
 
 </html>
